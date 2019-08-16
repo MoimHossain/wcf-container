@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netfrmwkremoting", "netfrmwkremoting.csproj", "{DB97390F-79AE-4984-B3BF-791D484D3837}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{91430B14-314C-42BC-9C91-DCFA2815036E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB97390F-79AE-4984-B3BF-791D484D3837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB97390F-79AE-4984-B3BF-791D484D3837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB97390F-79AE-4984-B3BF-791D484D3837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB97390F-79AE-4984-B3BF-791D484D3837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91430B14-314C-42BC-9C91-DCFA2815036E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91430B14-314C-42BC-9C91-DCFA2815036E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91430B14-314C-42BC-9C91-DCFA2815036E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91430B14-314C-42BC-9C91-DCFA2815036E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB8BDD79-7A17-4EC0-8195-DCB24307E6FD}
+	EndGlobalSection
+EndGlobal

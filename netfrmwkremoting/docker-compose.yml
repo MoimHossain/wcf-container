@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  netfrmwkremoting:
+    image: ${DOCKER_REGISTRY-}netfrmwkremoting
+    build:
+      context: .
+      dockerfile: Dockerfile
