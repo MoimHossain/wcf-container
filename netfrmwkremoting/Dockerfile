@@ -6,5 +6,6 @@ FROM mcr.microsoft.com/dotnet/framework/runtime:4.8
 
 WORKDIR /app
 EXPOSE 8789
-COPY ./bin/release/netfrmwkremoting.exe .
+
+COPY ./bin/release/ ./
 ENTRYPOINT ["C:\\app\\netfrmwkremoting.exe"]

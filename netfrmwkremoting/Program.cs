@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace netfrmwkremoting
 {
-    class Program
+    public class Program
     {
         private static int port = 8789;
         static void Main(string[] args)
@@ -52,20 +52,25 @@ namespace netfrmwkremoting
                             count = 10;
                         }
 
-                        var sw = Stopwatch.StartNew();
-                        for (var x = 0; x < count; ++x)
-                        {
-                            var result = wcf.Client.Greet("Hello world");
-                            Console.CursorTop = 6;
-                            Console.CursorLeft = 0;
-                            Console.WriteLine("Iteration count: {0,22:D8}", x + 1);
-                        }
-                        sw.Stop();
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write("Elapsed Milliseconds: ");
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(sw.ElapsedMilliseconds);
-                        Console.ResetColor();
+                        perfCount = count;
+                        instance = wcf;
+
+                        BenchmarkDotNet.Running.BenchmarkRunner.Run<Program>();
+
+                        //var sw = Stopwatch.StartNew();
+                        //for (var x = 0; x < count; ++x)
+                        //{
+                        //    var result = wcf.Client.Greet("Hello world");
+                        //    Console.CursorTop = 6;
+                        //    Console.CursorLeft = 0;
+                        //    Console.WriteLine("Iteration count: {0,22:D8}", x + 1);
+                        //}
+                        //sw.Stop();
+                        //Console.ForegroundColor = ConsoleColor.Yellow;
+                        //Console.Write("Elapsed Milliseconds: ");
+                        //Console.ForegroundColor = ConsoleColor.Green;
+                        //Console.WriteLine(sw.ElapsedMilliseconds);
+                        //Console.ResetColor();
 
                         Console.WriteLine("Press [A] to run again...");
                         runAgain = (Console.ReadKey(intercept: true).Key == ConsoleKey.A);
@@ -76,6 +81,18 @@ namespace netfrmwkremoting
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        private static WcfService.ClientProxy<IWcf> instance;
+        private static int perfCount;
+
+        [BenchmarkDotNet.Attributes.Benchmark]
+        public void Execute()
+        {
+            for (var x = 0; x < perfCount; ++x)
+            {
+                var result = instance.Client.Greet("Hello world");
             }
         }
 
